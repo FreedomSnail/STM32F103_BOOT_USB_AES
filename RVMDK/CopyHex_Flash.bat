@@ -1,0 +1,1 @@
+move Objects\*.hex STM32F103_BOOTLOADER.hex

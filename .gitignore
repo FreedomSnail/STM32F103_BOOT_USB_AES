@@ -1,0 +1,68 @@
+# MDK project files
+JLinkLog.txt
+*.Administrator
+*.uvoptx
+*.uvprojx
+*.lst
+*.map
+*.axf
+*.bin
+*.Bak
+*.htm
+*.crf
+*.d
+*.dep
+*.hex
+*.lnp
+*.o
+*.sct
+
+
+
+# Object files
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+
+
+
+# SourceInsight
+*.IAB
+*.IAD
+*.IMB
+*.IMD
+*.PFI
+*.PO
+*.PR
+*.PRI
+*.PS
+*.SearchResults
+*.WK3
+
+
+# Debug files
+*.dSYM/
+*.WK3
