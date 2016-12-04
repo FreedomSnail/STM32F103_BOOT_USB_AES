@@ -44,9 +44,12 @@ int main(void)
 	#if 1
 	//读usb_boot启动引脚
 	//将正确的升级文件放入U盘即可完成app程序更新
-	if( GPIO_ReadInputDataBit(BOOT_DISCONNECT, BOOT_DISCONNECT_PIN)==1 ) {
-		USB_HW_INIT();
-	} else {
+	if( GPIO_ReadInputDataBit(BOOT_DISCONNECT, BOOT_DISCONNECT_PIN)==0 ) {
+		USART_Send_Buf(USART2, "123456\r\n", 8);
+	//	USB_HW_INIT();
+	} 
+	#else
+	else {
 	    FLASH_Lock();
 	    GPIO_ResetBits(USB_DISCONNECT, USB_DISCONNECT_PIN);  
 	    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USB,DISABLE);
@@ -64,6 +67,13 @@ int main(void)
 	    *((u32 *)0xE000ED0C) = 0x05fa0004;     
 	}
 	#endif
+	while(1) {
+		if( GPIO_ReadInputDataBit(BOOT_DISCONNECT, BOOT_DISCONNECT_PIN)==0 ) {
+			USART_Send_Buf(USART2, "key\r\n", sizeof("key\r\n")-1);
+			USB_HW_INIT();
+			break;
+		}
+	}
 	while(1);
     return 0;
 }

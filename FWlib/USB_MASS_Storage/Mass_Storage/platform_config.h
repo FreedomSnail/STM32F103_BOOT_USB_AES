@@ -61,9 +61,9 @@ extern u8  KEY[];
 #define BOOT_DISCONNECT_PIN                  GPIO_Pin_0
 #define BOOT_GPIO_CLK                        RCC_APB2Periph_GPIOA
 #else
-#define BOOT_DISCONNECT                      GPIOB
-#define BOOT_DISCONNECT_PIN                  GPIO_Pin_0
-#define BOOT_GPIO_CLK                        RCC_APB2Periph_GPIOB
+#define BOOT_DISCONNECT                      GPIOA
+#define BOOT_DISCONNECT_PIN                  GPIO_Pin_15
+#define BOOT_GPIO_CLK                        RCC_APB2Periph_GPIOA
 #endif
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
